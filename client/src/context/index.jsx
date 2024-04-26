@@ -7,42 +7,42 @@ import { createThirdwebClient, getContract } from 'thirdweb';
 
 const StateContext = createContext();
 const client=createThirdwebClient({clientId:"07baf930ed674143787a0996a7bd15d7", secretKey:"5eZv9eF-9imb8mX_mxUkp4bfiqZJiRCtGp3WuLRvm79H2yj20zdgBhHQR1KZuHRSltLaBtl-3P4ZrNDVVoI45g"})
-const connect = (
-  <button
-    onClick={() =>
-      connect(async () => {
-        const metamask = createWallet("io.metamask"); // pass the wallet id
-        console.log("Trying to connect")
-        // if user has metamask installed, connect to it
-        if (injectedProvider("io.metamask")) {
-          await metamask.connect({ client });
-        }
+// const connect = (
+//   <button
+//     onClick={() =>
+//       connect(async () => {
+//         const metamask = createWallet("io.metamask"); // pass the wallet id
+//         console.log("Trying to connect")
+//         // if user has metamask installed, connect to it
+//         if (injectedProvider("io.metamask")) {
+//           await metamask.connect({ client });
+//         }
 
-        // open wallet connect modal so user can scan the QR code and connect
-        else {
-          await metamask.connect({
-            client,
-            walletConnect: { showQrModal: true },
-          });
-        }
+//         // open wallet connect modal so user can scan the QR code and connect
+//         else {
+//           await metamask.connect({
+//             client,
+//             walletConnect: { showQrModal: true },
+//           });
+//         }
 
-        // return the wallet
-        return metamask;
-      })
-    }
-  >
-    Connect
-  </button>
-)
+//         // return the wallet
+//         return metamask;
+//       })
+//     }
+//   >
+//     Connect
+//   </button>
+// )
 
 export const StateContextProvider = ({ children }) => {
-  const client=createThirdwebClient({clientId:"07baf930ed674143787a0996a7bd15d7", secretKey:"5eZv9eF-9imb8mX_mxUkp4bfiqZJiRCtGp3WuLRvm79H2yj20zdgBhHQR1KZuHRSltLaBtl-3P4ZrNDVVoI45g"})
+  //const client=createThirdwebClient({clientId:"07baf930ed674143787a0996a7bd15d7", secretKey:"5eZv9eF-9imb8mX_mxUkp4bfiqZJiRCtGp3WuLRvm79H2yj20zdgBhHQR1KZuHRSltLaBtl-3P4ZrNDVVoI45g"})
   //const  mycontract  = getContract({client,chain: defineChain(11155111), address: '0x2337Be73727a36fF9fd4E8a7F725E14cAd3B6120'})
   //console.log(mycontract)
-  const { contract } = useContract('0x2337Be73727a36fF9fd4E8a7F725E14cAd3B6120');
+  const { contract } = useContract('0x677b14639105Dbaf65D40a617597D5c9b12E9453');
   console.log(contract)
   const { mutateAsync: createCampaign ,isLoading, error} = useContractWrite(contract, 'createCampaign');
-  const address = "0x2337Be73727a36fF9fd4E8a7F725E14cAd3B6120"
+  const address = "0x677b14639105Dbaf65D40a617597D5c9b12E9453"
 
   const connectWallet = async () => {
     try {

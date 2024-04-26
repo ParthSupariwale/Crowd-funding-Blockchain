@@ -44,7 +44,7 @@ const CreateCampaign = () => {
     <div className="bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
       {isLoading && <Loader />}
       <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-[#3a3a43] rounded-[10px]">
-        <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white">Start a Campaign</h1>
+        <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white">Start a Charity</h1>
       </div>
 
       <form onSubmit={handleSubmit} className="w-full mt-[65px] flex flex-col gap-[30px]">
@@ -57,7 +57,7 @@ const CreateCampaign = () => {
             handleChange={(e) => handleFormFieldChange('name', e)}
           />
           <FormField 
-            labelName="Campaign Title *"
+            labelName="Charity Title *"
             placeholder="Write a title"
             inputType="text"
             value={form.title}
@@ -96,7 +96,7 @@ const CreateCampaign = () => {
         </div>
 
         <FormField 
-            labelName="Campaign image *"
+            labelName="Charity image *"
             placeholder="Place image URL of your campaign"
             inputType="url"
             value={form.image}
@@ -106,7 +106,7 @@ const CreateCampaign = () => {
           <div className="flex justify-center items-center mt-[40px]">
             <CustomButton 
               btnType="submit"
-              title="Submit new campaign"
+              title="Submit new charity"
               styles="bg-[#1dc071]"
             />
           </div>

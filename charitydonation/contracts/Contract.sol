@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-contract CrowdFunding {
+contract CharityDonation {
     struct Campaign {
         address owner;
         string title;
@@ -65,5 +65,12 @@ contract CrowdFunding {
         }
 
         return allCampaigns;
+    }
+
+    function deleteCampaign(uint256 _id) public {
+        require(_id < numberOfCampaigns, "Campaign does not exist");
+        require(campaigns[_id].owner == msg.sender, "Only the owner can delete the campaign");
+
+        delete campaigns[_id];
     }
 }
