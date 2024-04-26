@@ -82,10 +82,6 @@ To run the Charity Donation System locally, follow these steps:
 - ethers.js v5
 - dotenv v16.4.5
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ## Contact
 
 For any inquiries or feedback, please contact [jugalprakashk19@gmail.com](mailto:jugalprakashk19@gmail.com).
