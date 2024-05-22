@@ -84,6 +84,6 @@ To run the Charity Donation System locally, follow these steps:
 
 ## Contact
 
-For any inquiries or feedback, please contact [jugalprakashk19@gmail.com](mailto:jugalprakashk19@gmail.com).
+For any inquiries or feedback, please contact [parthsupariwale8@gmail.com](mailto:parthsupariwale8@gmail.com).
 
 ---
