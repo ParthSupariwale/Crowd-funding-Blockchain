@@ -15,7 +15,7 @@ To run the Charity Donation System locally, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/JugalKothari/charity-donation-system.git
+   git clone https://github.com/ParthSupariwale/Crowd-funding-Blockchain.git
    ```
 
 2. Navigate to the `client` directory and install frontend dependencies:
