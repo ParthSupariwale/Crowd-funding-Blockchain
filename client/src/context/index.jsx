@@ -1,12 +1,12 @@
 import React, { useContext, createContext } from 'react';
 import { createWallet, injectedProvider } from "thirdweb/wallets";
-import { useAddress, useContract, ConnectWallet, useContractWrite } from '@thirdweb-dev/react';
+import { useAddress, useConnect, useContract, useContractWrite, ConnectWallet } from '@thirdweb-dev/react';
 import { ethers } from 'ethers';
 import { defineChain } from "thirdweb/chains";
 import { createThirdwebClient, getContract } from 'thirdweb';
 
 const StateContext = createContext();
-const client=createThirdwebClient({clientId:"07baf930ed674143787a0996a7bd15d7", secretKey:"5eZv9eF-9imb8mX_mxUkp4bfiqZJiRCtGp3WuLRvm79H2yj20zdgBhHQR1KZuHRSltLaBtl-3P4ZrNDVVoI45g"})
+//const client=createThirdwebClient({clientId:"07baf930ed674143787a0996a7bd15d7", secretKey:"5eZv9eF-9imb8mX_mxUkp4bfiqZJiRCtGp3WuLRvm79H2yj20zdgBhHQR1KZuHRSltLaBtl-3P4ZrNDVVoI45g"})
 // const connect = (
 //   <button
 //     onClick={() =>
@@ -36,13 +36,15 @@ const client=createThirdwebClient({clientId:"07baf930ed674143787a0996a7bd15d7", 
 // )
 
 export const StateContextProvider = ({ children }) => {
-  //const client=createThirdwebClient({clientId:"07baf930ed674143787a0996a7bd15d7", secretKey:"5eZv9eF-9imb8mX_mxUkp4bfiqZJiRCtGp3WuLRvm79H2yj20zdgBhHQR1KZuHRSltLaBtl-3P4ZrNDVVoI45g"})
-  //const  mycontract  = getContract({client,chain: defineChain(11155111), address: '0x2337Be73727a36fF9fd4E8a7F725E14cAd3B6120'})
-  //console.log(mycontract)
-  const { contract } = useContract('0x677b14639105Dbaf65D40a617597D5c9b12E9453');
+  const client=createThirdwebClient({clientId:"0c4e768a4290b2bbb7d4cdf26171f7c0", secretKey:"kjFbPVwVGYdQl6QZg7TooCZcmcuzFisgnG8foARx-ApKfXLUcmyTwv-n5lovD7BrYAwifDBvIqafbOAI4-26oQ"})
+  const  mycontract  = getContract({client,chain: defineChain(11155111), address: '0x4c324bd61597F278295B0a88eDFf4c107419Dc7a'})
+  console.log(mycontract)
+  const { contract } = useContract('0x4c324bd61597F278295B0a88eDFf4c107419Dc7a');
   console.log(contract)
-  const { mutateAsync: createCampaign ,isLoading, error} = useContractWrite(contract, 'createCampaign');
-  const address = "0x677b14639105Dbaf65D40a617597D5c9b12E9453"
+  const { mutateAsync: createCampaign } = useContractWrite(contract, 'createCampaign');
+  //const address = "0x4c324bd61597F278295B0a88eDFf4c107419Dc7a"
+
+  const address = useAddress();
 
   const connectWallet = async () => {
     try {

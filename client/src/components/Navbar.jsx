@@ -8,13 +8,13 @@ import { CustomButton } from './';
 import { logo, menu, search, thirdweb } from '../assets';
 import { navlinks } from '../constants';
 
-const client = createThirdwebClient({ clientId : "07baf930ed674143787a0996a7bd15d7"});
+const client = createThirdwebClient({ clientId : "0c4e768a4290b2bbb7d4cdf26171f7c0"});
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState('dashboard');
   const [toggleDrawer, setToggleDrawer] = useState(false);
-  const {address, connectWallet } = useStateContext();
+  const {connect, address } = useStateContext();
   const handleConnect = async () => {
     try {
       const wallet = await connectWallet();

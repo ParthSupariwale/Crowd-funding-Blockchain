@@ -12,10 +12,12 @@
     "@thirdweb-dev/react": "^4",
     "@thirdweb-dev/sdk": "^4",
     "ethers": "^5",
+    "metamask-react": "^2.7.0",
     "react": "^18.2",
     "react-dom": "^18.2",
-    "react-router-dom": "^6.23.0",
-    "thirdweb": "^5.12.0"
+    "react-router-dom": "^6.23.1",
+    "thirdweb": "^5.19.1",
+    "use-metamask": "^1.3.3"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2",
